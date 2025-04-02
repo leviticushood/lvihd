@@ -407,6 +407,32 @@
       z-index: 1000;
     ">▶</button>
 
+    <button id="playPauseBtn" onclick="togglePlay()" style="
+  position: fixed;
+  bottom: 2rem;
+  right: 4rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #777;
+  cursor: pointer;
+  z-index: 1000;
+">❚❚</button>
+
+<script>
+  const audio = document.getElementById('minimal-player');
+  const btn = document.getElementById('playPauseBtn');
+
+  function togglePlay() {
+    if (audio.paused) {
+      audio.play();
+      btn.textContent = '❚❚';
+    } else {
+      audio.pause();
+      btn.textContent = '▶';
+    }
+  }
+</script>
 
   </main>
 
