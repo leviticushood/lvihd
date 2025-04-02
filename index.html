@@ -196,41 +196,56 @@
       justify-content: center;
     }
 
-    .border-text .top,
-    .border-text .bottom {
+    .border-text {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 100;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 1.8vh;
+      color: transparent;
+      -webkit-text-stroke: 1px #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .border-text span {
+      display: block;
       position: absolute;
-      width: 100%;
-      text-align: center;
       white-space: nowrap;
     }
 
     .border-text .top {
       top: 0;
       left: 0;
+      width: 100%;
+      text-align: center;
     }
 
     .border-text .bottom {
       bottom: 0;
       left: 0;
-    }
-
-    .border-text .left,
-    .border-text .right {
-      position: absolute;
-      height: 100%;
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
-      white-space: nowrap;
+      width: 100%;
+      text-align: center;
     }
 
     .border-text .left {
       left: 0;
       top: 0;
+      height: 100%;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
     }
 
     .border-text .right {
       right: 0;
       top: 0;
+      height: 100%;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
     }
 
     footer {
@@ -278,9 +293,9 @@
   </div>
 
 
-  <!-- Vertical Text -->
+  <!-- Vertical Text
   <div class="vertical-text">IT'S NOT THAT SIMPLE LEVI</div>
-
+-->
 
   <!-- Logo -->
   <img src="logo.png" alt="LVIHD Logo" class="logo">
