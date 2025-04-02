@@ -367,50 +367,40 @@
       </a>
     </div>
 
-    <!-- SoundCloud Player (Hidden) -->
-<iframe
-id="sc-player"
-width="0"
-height="0"
-scrolling="no"
-frameborder="no"
-allow="autoplay"
-src="https://on.soundcloud.com/q3Yu3w9X7pv9EyFy5">
-</iframe>
+    <audio id="minimal-player" autoplay>
+      <source src="madeit.mp3" type="audio/mp3">
+    </audio>
+    
 
-<!-- Custom Play/Pause Button -->
-<button id="scPlayPauseBtn" onclick="toggleSC()" style="
-position: fixed;
-bottom: 2rem;
-right: 4rem;
-background: none;
-border: none;
-font-size: 2rem;
-color: #777;
-cursor: pointer;
-z-index: 1000;
-">❚❚</button>
 
-<!-- SoundCloud Widget API -->
-<script src="https://w.soundcloud.com/player/api.js"></script>
+      <button id="playPauseBtn" onclick="togglePlay()" style="
+  position: fixed;
+  bottom: 2rem;
+  right: 4rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #777;
+  cursor: pointer;
+  z-index: 1000;
+">
+  ❚❚
+</button>
+
 <script>
-const iframe = document.getElementById('sc-player');
-const widget = SC.Widget(iframe);
-const btn = document.getElementById('scPlayPauseBtn');
-let isPlaying = true;
+  const audio = document.getElementById('minimal-player');
+  const btn = document.getElementById('playPauseBtn');
 
-function toggleSC() {
-  if (isPlaying) {
-    widget.pause();
-    btn.innerText = '▶';
-  } else {
-    widget.play();
-    btn.innerText = '❚❚';
+  function togglePlay() {
+    if (audio.paused) {
+      audio.play();
+      btn.innerText = '❚❚'; // pause icon
+    } else {
+      audio.pause();
+      btn.innerText = '▶'; // play icon
+    }
   }
-  isPlaying = !isPlaying;
-}
 </script>
-
 
 
 
