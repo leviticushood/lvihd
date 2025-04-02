@@ -197,9 +197,6 @@
     }
 
     .border-text {
-      position: fixed;
-      width: 100vw;
-      height: 100vh;
       pointer-events: none;
       z-index: 100;
       font-family: 'Orbitron', sans-serif;
@@ -207,44 +204,46 @@
       font-size: 1.8vh;
       color: transparent;
       -webkit-text-stroke: 1px #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
     }
 
-    .border-text span {
-      display: block;
-      position: absolute;
+    .border-text .top,
+    .border-text .bottom {
+      position: fixed;
+      width: 100%;
+      text-align: center;
       white-space: nowrap;
+      overflow: hidden;
     }
 
     .border-text .top {
       top: 0;
       left: 0;
-      width: 100%;
-      text-align: center;
     }
 
     .border-text .bottom {
       bottom: 0;
       left: 0;
-      width: 100%;
+    }
+
+    .border-text .left,
+    .border-text .right {
+      position: fixed;
+      height: 100vh;
+      writing-mode: vertical-rl;
       text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
     }
 
     .border-text .left {
-      left: 0;
       top: 0;
-      height: 100%;
-      writing-mode: vertical-rl;
+      left: 0;
       transform: rotate(180deg);
     }
 
     .border-text .right {
-      right: 0;
       top: 0;
-      height: 100%;
-      writing-mode: vertical-rl;
+      right: 0;
       transform: rotate(180deg);
     }
 
