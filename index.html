@@ -11,10 +11,14 @@
       padding: 0;
       box-sizing: border-box;
     }
+    html, body {
+      scroll-behavior: smooth;
+    }
     body {
       font-family: Arial, sans-serif;
       background-color: black;
       color: #fff;
+      overflow-x: hidden;
     }
 
     #intro-overlay {
@@ -47,8 +51,48 @@
       display: block;
     }
 
-    .music-grid {
+    .featured-section {
       display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 8rem 2rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .featured-section .featured-image {
+      flex: 0 0 calc(66.66% - 1rem);
+      max-width: calc(66.66% - 1rem);
+    }
+
+    .featured-section .featured-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .featured-section .featured-text {
+      flex: 0 0 calc(33.33% - 1rem);
+      max-width: calc(33.33% - 1rem);
+      display: flex;
+      align-items: center;
+    }
+
+    .featured-text div {
+      color: #ccc;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .featured-text h2 {
+      color: white;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .music-grid {
+      display: grid;
       grid-template-columns: repeat(3, 250px);
       justify-content: center;
       gap: 2rem;
@@ -121,7 +165,7 @@
     }
   </style>
 </head>
-<body>
+<body onload="window.scrollTo(0, 0)">
   <!-- Intro Overlay -->
   <div id="intro-overlay">
     <video id="intro-video" autoplay muted playsinline>
@@ -132,6 +176,8 @@
   <!-- Logo -->
   <img src="logo.png" alt="LVIHD Logo" class="logo">
 
+
+  
   <main class="music-grid">
 
     <div class="release">
