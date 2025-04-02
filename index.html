@@ -122,10 +122,12 @@
 
     .music-grid {
       display: grid;
-      grid-template-columns: repeat(3, 250px);
-      justify-content: center;
-      gap: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
       padding: 4rem 2rem 4rem;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .release {
