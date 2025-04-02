@@ -367,40 +367,39 @@
       </a>
     </div>
 
-    <audio id="minimal-player" autoplay>
+    <audio id="minimal-player">
       <source src="aaliyah.mp3" type="audio/mp3">
     </audio>
     
-
-
-      <button id="playPauseBtn" onclick="togglePlay()" style="
-  position: fixed;
-  bottom: 2rem;
-  right: 4rem;
-  background: none;
-  border: none;
-  font-size: 2rem;
-  color: #777;
-  cursor: pointer;
-  z-index: 1000;
-">
-  ❚❚
-</button>
-
-<script>
-  const audio = document.getElementById('minimal-player');
-  const btn = document.getElementById('playPauseBtn');
-
-  function togglePlay() {
-    if (audio.paused) {
-      audio.play();
-      btn.innerText = '❚❚'; // pause icon
-    } else {
-      audio.pause();
-      btn.innerText = '▶'; // play icon
-    }
-  }
-</script>
+    <button id="playPauseBtn" onclick="togglePlay()" style="
+      position: fixed;
+      bottom: 2rem;
+      right: 4rem;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: #777;
+      cursor: pointer;
+      z-index: 1000;
+    ">
+      ▶
+    </button>
+    
+    <script>
+      const audio = document.getElementById('minimal-player');
+      const btn = document.getElementById('playPauseBtn');
+    
+      function togglePlay() {
+        if (audio.paused) {
+          audio.play();
+          btn.innerText = '❚❚';
+        } else {
+          audio.pause();
+          btn.innerText = '▶';
+        }
+      }
+    </script>
+    
 
 
 
