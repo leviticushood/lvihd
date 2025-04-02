@@ -121,8 +121,8 @@
 </head>
 <body>
   <header>
-    <video autoplay muted playsinline onended="this.pause(); this.currentTime = this.duration;">
-      <source src="LVIHD.mov" type="video/quicktime" />
+    <video autoplay muted playsinline onended="this.pause(); this.currentTime = this.duration;" preload="auto">
+      <source src="LVIHD.mp4" type="video/mp4" />
     </video>
     <div class="overlay">
       <h1>LVIHD</h1>
@@ -136,18 +136,30 @@
     </div>
 
     <div class="albums">
-      <!-- Repeat this block per album/single -->
       <div class="album">
-        <a href="https://link-to-your-music.com">
-          <img src="link-to-album-cover.jpg" alt="Album Cover" />
+        <a href="https://www.amazon.com/Fuego-Lvihd/dp/B08B2TZ1FH" target="_blank">
+          <img src="https://tse2.mm.bing.net/th?id=OIP.2IMUA1UjdUtHryVIbp6SLgHaHa&pid=Api" alt="Fuego Album Cover" />
         </a>
-        <div class="album-title">Cousins Freestyle</div>
+        <div class="album-title">Fuego</div>
       </div>
-      <!-- Add more album blocks below as needed -->
+
+      <div class="album">
+        <a href="https://music.youtube.com/watch?list=OLAK5uy_lSghtHHBcUmaXBEegGSEIImcZ7k3Fznts&v=xfyuuIlo-kA" target="_blank">
+          <img src="https://tse4.mm.bing.net/th?id=OIP.KDjgju0EqAGFZRWTRVfi4wHaEK&pid=Api" alt="Muévelo / Baila Album Cover" />
+        </a>
+        <div class="album-title">Muévelo / Baila</div>
+      </div>
+
+      <div class="album">
+        <a href="https://www.youtube.com/watch?v=It1BSycvr_k" target="_blank">
+          <img src="https://tse2.mm.bing.net/th?id=OIP.haayjDuCwGyki8MmoQ3_eQHaEK&pid=Api" alt="Distance Album Cover" />
+        </a>
+        <div class="album-title">Distance</div>
+      </div>
     </div>
 
     <div class="music-player">
-      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/It1BSycvr_k" allowfullscreen></iframe>
     </div>
   </section>
 
