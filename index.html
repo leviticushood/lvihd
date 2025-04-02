@@ -407,7 +407,7 @@
       z-index: 1000;
     ">▶</button>
 
-    <button id="playPauseBtn" onclick="togglePlay()" style="
+      <button id="playPauseBtn" onclick="togglePlay()" style="
   position: fixed;
   bottom: 2rem;
   right: 4rem;
@@ -417,7 +417,9 @@
   color: #777;
   cursor: pointer;
   z-index: 1000;
-">❚❚</button>
+">
+  ❚❚
+</button>
 
 <script>
   const audio = document.getElementById('minimal-player');
@@ -426,13 +428,20 @@
   function togglePlay() {
     if (audio.paused) {
       audio.play();
-      btn.textContent = '❚❚';
+      btn.innerText = '❚❚'; // pause icon
     } else {
       audio.pause();
-      btn.textContent = '▶';
+      btn.innerText = '▶'; // play icon
     }
   }
 </script>
+
+
+
+
+
+
+
 
   </main>
 
