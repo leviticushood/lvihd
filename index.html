@@ -21,38 +21,53 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 2rem;
-      padding: 8rem 2rem 4rem; /* Start lower on the page */
+      padding: 8rem 2rem 4rem;
     }
 
     .release {
+      position: relative;
       width: 250px;
-      background-color: transparent; /* Match ovo style, no background */
-      border-radius: 0; /* Remove rounding */
+      border-radius: 0;
       overflow: hidden;
+      cursor: pointer;
       transition: transform 0.3s ease;
-    }
-
-    .release:hover {
-      transform: scale(1.03);
     }
 
     .release img {
       width: 100%;
       display: block;
-      border-radius: 0; /* Ensure no image rounding */
+      border-radius: 0;
+      transition: opacity 0.3s ease;
     }
 
-    .release-info {
-      padding-top: 0.75rem;
+    .release .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .release:hover img {
+      opacity: 0.3;
+    }
+
+    .release:hover .overlay {
+      opacity: 1;
+    }
+
+    .overlay h3 {
+      color: #fff;
+      font-size: 0.75rem;
       text-align: center;
-    }
-
-    .release-info h3 {
-      font-size: 0.9rem;
-      font-weight: normal;
-      color: #ccc;
-      margin: 0;
       letter-spacing: 1px;
+      padding: 0 0.5rem;
     }
 
     footer {
@@ -79,28 +94,22 @@
     <div class="release">
       <a href="https://www.amazon.com/Fuego-Lvihd/dp/B08B2TZ1FH" target="_blank">
         <img src="https://tse2.mm.bing.net/th?id=OIP.2IMUA1UjdUtHryVIbp6SLgHaHa&pid=Api" alt="Fuego">
+        <div class="overlay"><h3>FUEGO</h3></div>
       </a>
-      <div class="release-info">
-        <h3>FUEGO</h3>
-      </div>
     </div>
 
     <div class="release">
       <a href="https://music.youtube.com/watch?list=OLAK5uy_lSghtHHBcUmaXBEegGSEIImcZ7k3Fznts&v=xfyuuIlo-kA" target="_blank">
         <img src="https://tse4.mm.bing.net/th?id=OIP.KDjgju0EqAGFZRWTRVfi4wHaEK&pid=Api" alt="Muévelo / Baila">
+        <div class="overlay"><h3>MUÉVELO / BAILA</h3></div>
       </a>
-      <div class="release-info">
-        <h3>MUÉVELO / BAILA</h3>
-      </div>
     </div>
 
     <div class="release">
       <a href="https://www.youtube.com/watch?v=It1BSycvr_k" target="_blank">
         <img src="https://tse2.mm.bing.net/th?id=OIP.haayjDuCwGyki8MmoQ3_eQHaEK&pid=Api" alt="Distance">
+        <div class="overlay"><h3>DISTANCE</h3></div>
       </a>
-      <div class="release-info">
-        <h3>DISTANCE</h3>
-      </div>
     </div>
   </main>
 
