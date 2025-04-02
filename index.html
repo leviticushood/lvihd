@@ -27,6 +27,12 @@
       justify-content: center;
       align-items: center;
       z-index: 9999;
+      transition: opacity 1s ease;
+    }
+
+    #intro-overlay.fade-out {
+      opacity: 0;
+      pointer-events: none;
     }
 
     #intro-video {
@@ -110,7 +116,7 @@
 <body>
   <!-- Intro Overlay -->
   <div id="intro-overlay">
-    <video id="intro-video" autoplay muted playsinline onended="document.getElementById('intro-overlay').style.display='none'; this.pause(); this.currentTime=this.duration;">
+    <video id="intro-video" autoplay muted playsinline>
       <source src="LVIHD.mov" type="video/mp4">
     </video>
   </div>
@@ -146,5 +152,15 @@
     <a href="https://instagram.com/yourhandle" target="_blank">Instagram</a>
     <a href="https://tidal.com/browse/artist/yourid" target="_blank">Tidal</a>
   </footer>
+
+  <script>
+    const introVideo = document.getElementById('intro-video');
+    const overlay = document.getElementById('intro-overlay');
+    introVideo.onended = function () {
+      overlay.classList.add('fade-out');
+      this.pause();
+      this.currentTime = this.duration;
+    };
+  </script>
 </body>
 </html>
