@@ -401,7 +401,16 @@
     </script>
     
 
-
+    <script>
+      const isInstagram = navigator.userAgent.includes("Instagram");
+      const introVideo = document.getElementById('intro-video');
+    
+      if (isInstagram) {
+        introVideo.removeAttribute("autoplay");
+        introVideo.style.display = "none"; // hide it if needed
+        document.getElementById('intro-overlay').classList.add('fade-out');
+      }
+    </script>
 
 
 
