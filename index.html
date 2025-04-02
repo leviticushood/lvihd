@@ -13,12 +13,25 @@
     }
     html, body {
       scroll-behavior: smooth;
+      height: 100%;
     }
     body {
       font-family: Arial, sans-serif;
       background-color: black;
       color: #fff;
       overflow-x: hidden;
+      position: relative;
+      z-index: 1;
+    }
+
+    #background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
     }
 
     #intro-overlay {
