@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LVIHD</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
-      background: #0f0f0f;
-      color: #ffffff;
-      font-family: 'Helvetica Neue', sans-serif;
-      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
     }
-
     header {
-      position: relative;
-      width: 100%;
       height: 100vh;
-      overflow: hidden;
+      background: #000;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
     }
-
     header video {
       position: absolute;
       top: 0;
@@ -32,84 +32,44 @@
       object-fit: cover;
       z-index: 0;
     }
-
-    .overlay {
-      position: relative;
+    header .logo {
       z-index: 1;
-      text-align: center;
-    }
-
-    .overlay h1 {
       font-size: 4rem;
-      color: #fff;
-      margin: 0;
+      letter-spacing: 10px;
     }
-
-    .section {
-      padding: 4rem 2rem;
-      transition: opacity 1s ease, transform 1s ease;
-      background-color: #121212;
+    .content {
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: auto;
     }
-
-    .section img.artist-photo {
-      width: 200px;
-      border-radius: 50%;
-      margin-bottom: 2rem;
-      border: 3px solid #1f1f1f;
-    }
-
     .albums {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       gap: 2rem;
-      padding-top: 2rem;
     }
-
     .album {
-      background: #1c1c1c;
-      border-radius: 12px;
+      background: #111;
+      border-radius: 10px;
       overflow: hidden;
-      transition: transform 0.3s;
+      transition: transform 0.3s ease;
     }
-
     .album:hover {
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
-
     .album img {
       width: 100%;
       display: block;
     }
-
     .album-title {
+      text-align: center;
       padding: 1rem;
-      text-align: center;
       font-size: 1rem;
-      color: #ccc;
+      color: #aaa;
     }
-
-    .links {
-      text-align: center;
-      padding: 2rem 0;
-    }
-
-    .links a {
-      margin: 0 10px;
-      color: #77aadd;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-
-    .links a:hover {
-      color: #fff;
-    }
-
     .music-player {
       text-align: center;
-      margin-top: 3rem;
+      margin-top: 4rem;
     }
-
     iframe {
       border: none;
       border-radius: 10px;
@@ -117,62 +77,71 @@
       max-width: 560px;
       height: 315px;
     }
+    .socials {
+      text-align: center;
+      padding: 2rem;
+      font-size: 1rem;
+    }
+    .socials a {
+      margin: 0 10px;
+      color: #aaa;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .socials a:hover {
+      color: #fff;
+    }
   </style>
 </head>
 <body>
   <header>
     <video autoplay muted playsinline onended="this.pause(); this.currentTime = this.duration;" preload="auto">
-      <source src="LVIHD.mp4" type="video/mp4" /> <!-- Replace 'LVIHD.mp4' with your actual MP4 file path if different -->
+      <source src="LVIHD.mp4" type="video/mp4"> <!-- Replace with actual video file -->
     </video>
-    <div class="overlay">
-      <h1>LVIHD</h1>
-    </div>
+    <div class="logo">LVIHD</div>
   </header>
 
-  <section class="section" id="about">
-    <div style="text-align:center;">
-      <img src="dramashot.jpg" alt="LVIHD" class="artist-photo" /> <!-- Replace 'dramashot.jpg' with the actual image file if renamed -->
-      <h2>Music Collection</h2>
-    </div>
-
+  <div class="content">
     <div class="albums">
-      <!-- Replace album cover links and href values with your actual album data -->
+      <!-- Album: Fuego -->
       <div class="album">
         <a href="https://www.amazon.com/Fuego-Lvihd/dp/B08B2TZ1FH" target="_blank">
-          <img src="https://tse2.mm.bing.net/th?id=OIP.2IMUA1UjdUtHryVIbp6SLgHaHa&pid=Api" alt="Fuego Album Cover" />
+          <img src="https://tse2.mm.bing.net/th?id=OIP.2IMUA1UjdUtHryVIbp6SLgHaHa&pid=Api" alt="Fuego">
         </a>
         <div class="album-title">Fuego</div>
       </div>
 
+      <!-- Album: Muévelo / Baila -->
       <div class="album">
         <a href="https://music.youtube.com/watch?list=OLAK5uy_lSghtHHBcUmaXBEegGSEIImcZ7k3Fznts&v=xfyuuIlo-kA" target="_blank">
-          <img src="https://tse4.mm.bing.net/th?id=OIP.KDjgju0EqAGFZRWTRVfi4wHaEK&pid=Api" alt="Muévelo / Baila Album Cover" />
+          <img src="https://tse4.mm.bing.net/th?id=OIP.KDjgju0EqAGFZRWTRVfi4wHaEK&pid=Api" alt="Muévelo / Baila">
         </a>
         <div class="album-title">Muévelo / Baila</div>
       </div>
 
+      <!-- Album: Distance -->
       <div class="album">
         <a href="https://www.youtube.com/watch?v=It1BSycvr_k" target="_blank">
-          <img src="https://tse2.mm.bing.net/th?id=OIP.haayjDuCwGyki8MmoQ3_eQHaEK&pid=Api" alt="Distance Album Cover" />
+          <img src="https://tse2.mm.bing.net/th?id=OIP.haayjDuCwGyki8MmoQ3_eQHaEK&pid=Api" alt="Distance">
         </a>
         <div class="album-title">Distance</div>
       </div>
     </div>
 
     <div class="music-player">
-      <!-- Replace the video ID with your actual video embed link -->
+      <!-- Replace with real YouTube video embed -->
       <iframe src="https://www.youtube.com/embed/It1BSycvr_k" allowfullscreen></iframe>
     </div>
-  </section>
+  </div>
 
-  <section class="links">
-    <!-- Replace these placeholder links with your actual music/social URLs -->
+  <div class="socials">
+    <!-- Replace links with your actual profiles -->
     <a href="https://youtube.com/yourchannel" target="_blank">YouTube</a>
     <a href="https://music.apple.com/yourpage" target="_blank">Apple Music</a>
     <a href="https://open.spotify.com/artist/yourid" target="_blank">Spotify</a>
     <a href="https://soundcloud.com/yourname" target="_blank">SoundCloud</a>
     <a href="https://instagram.com/yourhandle" target="_blank">Instagram</a>
     <a href="https://tidal.com/browse/artist/yourid" target="_blank">Tidal</a>
-  </section>
+  </div>
 </body>
 </html>
