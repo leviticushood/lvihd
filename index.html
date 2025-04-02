@@ -41,12 +41,58 @@
       max-width: 80%;
     }
 
+    .logo {
+      width: 80px;
+      margin: 2rem auto 0;
+      display: block;
+    }
+
+    .featured-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 8rem 2rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .featured-section .featured-image {
+      flex: 0 0 calc(66.66% - 1rem);
+      max-width: calc(66.66% - 1rem);
+    }
+
+    .featured-section .featured-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .featured-section .featured-text {
+      flex: 0 0 calc(33.33% - 1rem);
+      max-width: calc(33.33% - 1rem);
+      display: flex;
+      align-items: center;
+    }
+
+    .featured-text div {
+      color: #ccc;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .featured-text h2 {
+      color: white;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
     .music-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 2rem;
-      padding: 8rem 2rem 4rem;
+      padding: 4rem 2rem 4rem;
     }
 
     .release {
@@ -123,20 +169,24 @@
     </video>
   </div>
 
-  <section style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; padding: 8rem 2rem 2rem; max-width: 1200px; margin: 0 auto;">
-    <div style="flex: 0 0 calc(66.66% - 1rem); max-width: calc(66.66% - 1rem);">
-      <img src="filler.jpg" alt="NEW PROJECT" style="width: 100%; height: auto; display: block;">
+  <!-- Logo -->
+  <img src="logo.png" alt="LVIHD Logo" class="logo">
+
+  <!-- Featured Section -->
+  <section class="featured-section">
+    <div class="featured-image">
+      <img src="filler.jpg" alt="NEW PROJECT">
     </div>
-    <div style="flex: 0 0 calc(33.33% - 1rem); max-width: calc(33.33% - 1rem); display: flex; align-items: center;">
-      <div style="color: #ccc; font-size: 0.95rem; line-height: 1.6;">
-        <h2 style="color: white; font-size: 1.5rem; margin-bottom: 1rem;">NEW PROJECT</h2>
+    <div class="featured-text">
+      <div>
+        <h2>NEW PROJECT</h2>
         <p>IT'S NOT THAT SIMPLE LEVI...</p>
       </div>
     </div>
   </section>
 
-  
   <main class="music-grid">
+
     <div class="release">
       <a href="https://distrokid.com/hyperfollow/lvihd/cousins-freestyle" target="_blank">
         <img src="https://distrokid.imgix.net/http%3A%2F%2Fgather.fandalism.com%2F2129111--C13CC0A3-51FC-462C-AB28B5CC4807397F--0--18602796--IMG1531.PNG?fm=jpg&q=75&w=800&s=8e3eba1c0c6dcf08f8637f5e0e7ec1a1" alt="COUSINS FREESTYLE">
