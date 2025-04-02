@@ -196,6 +196,43 @@
       justify-content: center;
     }
 
+    .border-text .top,
+    .border-text .bottom {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .border-text .top {
+      top: 0;
+      left: 0;
+    }
+
+    .border-text .bottom {
+      bottom: 0;
+      left: 0;
+    }
+
+    .border-text .left,
+    .border-text .right {
+      position: absolute;
+      height: 100%;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      white-space: nowrap;
+    }
+
+    .border-text .left {
+      left: 0;
+      top: 0;
+    }
+
+    .border-text .right {
+      right: 0;
+      top: 0;
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
