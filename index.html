@@ -159,6 +159,20 @@
       font-weight: 300;
     }
 
+    .vertical-text {
+      position: fixed;
+      right: 0;
+      bottom: 10%;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.3);
+      letter-spacing: 2px;
+      z-index: 100;
+      pointer-events: none;
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
@@ -179,12 +193,22 @@
   </style>
 </head>
 <body onload="window.scrollTo(0, 0)">
+  <!-- Background Video -->
+  <video id="background-video" autoplay muted loop playsinline>
+    <source src="filmoverlay.mp4" type="video/mp4">
+  </video>
+
   <!-- Intro Overlay -->
   <div id="intro-overlay">
     <video id="intro-video" autoplay muted playsinline>
       <source src="LVIHD.mov" type="video/mp4">
     </video>
   </div>
+
+
+  <!-- Vertical Text -->
+  <div class="vertical-text">IT'S NOT THAT SIMPLE LEVI</div>
+
 
   <!-- Logo -->
   <img src="logo.png" alt="LVIHD Logo" class="logo">
