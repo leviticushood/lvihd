@@ -1,1 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LVIHD</title>
+  <style>
+    body {
+      margin: 0;
+      background: #0f0f0f;
+      color: #ffffff;
+      font-family: 'Helvetica Neue', sans-serif;
+      overflow-x: hidden;
+    }
 
+    header {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    header video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .overlay {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .overlay h1 {
+      font-size: 4rem;
+      color: #fff;
+      margin: 0;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      transition: opacity 1s ease, transform 1s ease;
+      background-color: #121212;
+    }
+
+    .section img.artist-photo {
+      width: 200px;
+      border-radius: 50%;
+      margin-bottom: 2rem;
+      border: 3px solid #1f1f1f;
+    }
+
+    .albums {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 2rem;
+      padding-top: 2rem;
+    }
+
+    .album {
+      background: #1c1c1c;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .album:hover {
+      transform: scale(1.05);
+    }
+
+    .album img {
+      width: 100%;
+      display: block;
+    }
+
+    .album-title {
+      padding: 1rem;
+      text-align: center;
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    .links {
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    .links a {
+      margin: 0 10px;
+      color: #77aadd;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .links a:hover {
+      color: #fff;
+    }
+
+    .music-player {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    iframe {
+      border: none;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <video autoplay muted playsinline onended="this.pause(); this.currentTime = this.duration;">
+      <source src="LVIHD.mov" type="video/quicktime" />
+    </video>
+    <div class="overlay">
+      <h1>LVIHD</h1>
+    </div>
+  </header>
+
+  <section class="section" id="about">
+    <div style="text-align:center;">
+      <img src="dramashot.jpg" alt="LVIHD" class="artist-photo" />
+      <h2>Music Collection</h2>
+    </div>
+
+    <div class="albums">
+      <!-- Repeat this block per album/single -->
+      <div class="album">
+        <a href="https://link-to-your-music.com">
+          <img src="link-to-album-cover.jpg" alt="Album Cover" />
+        </a>
+        <div class="album-title">Cousins Freestyle</div>
+      </div>
+      <!-- Add more album blocks below as needed -->
+    </div>
+
+    <div class="music-player">
+      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section class="links">
+    <a href="https://youtube.com/yourchannel" target="_blank">YouTube</a>
+    <a href="https://music.apple.com/yourpage" target="_blank">Apple Music</a>
+    <a href="https://open.spotify.com/artist/yourid" target="_blank">Spotify</a>
+    <a href="https://soundcloud.com/yourname" target="_blank">SoundCloud</a>
+    <a href="https://instagram.com/yourhandle" target="_blank">Instagram</a>
+    <a href="https://tidal.com/browse/artist/yourid" target="_blank">Tidal</a>
+  </section>
+</body>
+</html>
