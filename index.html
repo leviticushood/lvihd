@@ -249,6 +249,25 @@
     </video>
   </div>
 
+  <!-- JavaScript for Intro Overlay -->
+<script>
+  const introVideo = document.getElementById('intro-video');
+  const overlay = document.getElementById('intro-overlay');
+  const isInstagram = navigator.userAgent.includes("Instagram");
+
+  if (isInstagram) {
+    introVideo.removeAttribute("autoplay");
+    introVideo.style.display = "none";
+    overlay.classList.add("fade-out");
+  } else {
+    introVideo.onended = function () {
+      overlay.classList.add("fade-out");
+      this.pause();
+      this.currentTime = this.duration;
+    };
+  }
+</script>
+
   <!-- Border Text -->
   <div class="border-text">
     <div class="left">IT'S NOT THAT SIMPLE LEVI • IT'S NOT THAT SIMPLE LEVI • IT'S NOT THAT SIMPLE LEVI • IT'S NOT THAT SIMPLE LEVI • IT'S NOT THAT SIMPLE LEVI • IT'S NOT THAT SIMPLE LEVI • IT'S NOT THAT SIMPLE LEVI • IT'S NOT THAT SIMPLE LEVI •</div>
@@ -400,20 +419,6 @@
       }
     </script>
     
-
-    <script>
-      const isInstagram = navigator.userAgent.includes("Instagram");
-      const introVideo = document.getElementById('intro-video');
-    
-      if (isInstagram) {
-        introVideo.removeAttribute("autoplay");
-        introVideo.style.display = "none"; // hide it if needed
-        document.getElementById('intro-overlay').classList.add('fade-out');
-      }
-    </script>
-
-
-
 
 
 
